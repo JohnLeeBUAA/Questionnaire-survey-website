@@ -1,0 +1,120 @@
+<!--new code-->
+<!--new code-->
+<!--new code-->
+<!--new code-->
+<!--new code-->
+
+<style type="text/css">
+ table {
+  border-width: 0;
+  border-style: none;
+  border-color: #0000ff;
+  border-collapse: collapse;
+ }
+ td {
+   border-width: 0;
+   border-style: none;
+   border-color: #0000ff;
+   border-collapse: collapse;
+   padding: 0;
+   margin: 0;
+   width: 10px;
+   height: 10px;
+ }
+ td.black { background-color: #000; }
+ td.white { background-color: #fff; }
+</style>
+<!--new code-->
+<!--new code-->
+<!--new code-->
+<!--new code-->
+<!--new code-->
+
+
+
+
+
+
+<% provide(:title, '发布成功') %>
+<h1>发布成功!</h1>
+<p>
+  <!--
+  Trying to creat a page of mine
+  <a href="http://railstutorial.org/contact">contact page</a>.
+-->
+    <div class="alert alert-success">
+      Hey,你成功发布了一个问卷,赶快去看看吧!
+    </div>
+    <br>
+</p>
+
+
+
+
+
+
+
+
+<!--new code-->
+<!--new code-->
+<!--new code-->
+<!--new code-->
+<div style="text-align:center;">
+<table style="margin:auto;" >
+  <!--origin: align="center"-->
+ <% @qr.modules.each_index do |x| -%>
+   <tr>
+   <% @qr.modules.each_index do |y| -%>
+    <% if @qr.dark?(x,y) -%>
+    <td class="black"/>
+    <% else -%>
+    <td class="white"/>
+    <% end -%>
+   <% end -%>
+   </tr>
+ <% end -%>
+</table>
+
+ <!--
+  <input class="span3" readonly="true" text-aligin:"center" type="text" value="I am an URL~_~">      <button class="btn btn-primary" type="button">复制</button>
+-->
+  <br>
+  <br>
+  
+  <div class="input-append">
+    <input class="span6" id="appendedInputButton" type="text" readonly="true"  type="text" value= "<%= @tempstring %>">
+
+     </input><!--span1~span11控制宽度-->
+    <button class="btn btn-primary" type="button" data-clipboard-target='appendedInputButton' data-clipboard-text='Default clipboard text from attribute' id= "copyButton" >复制</button>
+
+ <script>
+
+  $(document).ready(function() {
+    var clip = new ZeroClipboard($("#copyButton"))
+   
+  });
+   $("#copyButton").on("click",function(){
+  alert("复制成功！");//这里写弹出成功提示的JS
+
+   });
+</script>
+    <button class="btn btn-info" type="button" onclick="gotoURL()">前往</button>
+     <script type="text/javascript">
+    function gotoURL()
+    {
+      var qURL=document.getElementById("appendedInputButton");
+     //window.location=qURL.value;
+     window.open(qURL.value);
+   }
+     </script>
+  </div>
+
+</div>
+
+<!--new code-->
+
+<!--new code-->
+<!--new code-->
+<!--new code-->
+<!--new code-->
+<!--new code-->

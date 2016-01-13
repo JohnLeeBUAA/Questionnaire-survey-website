@@ -1,0 +1,29 @@
+<% provide(:title, "Sign") %>
+
+<h1>登录</h1>
+
+<div class="row" >
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+    <div class="hero-unit" style="height:200px">
+      <div class="form-inline">
+        <%= f.label :邮箱 %>&nbsp;&nbsp;
+        <%= f.text_field :user_email,  :style=>"width:80%" %>
+      </div>
+      <br />
+      <div class="form-inline">
+        <%= f.label :密码 %>&nbsp;&nbsp;
+        <%= f.password_field :password, :style=>"width:80%" %>
+      </div>
+      <div align="center">
+        <br />
+        <%= f.submit "登录", class: "btn btn-large btn-primary" %>
+      </div>
+      <% end %>
+      <br />
+      <div align="center" style="font-size:10px">
+        <p>新用户？<%= link_to "现在注册！", signup_path %></p>
+      </div>
+    </div>
+  </div>
+</div>
